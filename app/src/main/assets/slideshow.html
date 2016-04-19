@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV</title>
+    <style>
+        html, body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        }
+    </style>
+    <script>
+		// update with the desired time to refresh the presentation (in minutes)
+		var refreshMinutes = 30;
+
+		var timer=setInterval(function(){refreshFrame()}, refreshMinutes*60*1000);
+		function refreshFrame()
+		{
+			var iframe = document.getElementById('presentFrame');
+			var iframeURL = iframe.src;
+			iframe.src = iframeURL;
+		}
+	</script>
+</head>
+<body>
+<!-- update the presentation ID with your own presentation -->
+<!-- update the &delayms= with the time to show each slide (in milliseconds) -->
+
+<!-- to update and display a different slide show, open a google doc. Go to file > publish on the web. Publish it. Then take the iframe src link and paste it below -->
+<iframe id="presentFrame" src="https://docs.google.com/presentation/d/1M5QyqbOn3dg_4aGfnUz_FzVq1E8riU3ekzbv4HzyM_w/embed?start=true&loop=true&delayms=3000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</body>
+</html>
